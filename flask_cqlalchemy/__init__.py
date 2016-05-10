@@ -6,6 +6,7 @@ flask_cqlalchemy
 :license: BSD, see LICENSE for more details
 
 """
+from __future__ import print_function
 from cassandra.cqlengine import connection
 from cassandra.cqlengine.management import (
     sync_table, create_keyspace_simple, sync_type
@@ -122,7 +123,7 @@ class handel_db_timeout:
         if self.logger:
             self.logger.warning(mesg)
         else:
-            print mesg
+            print(mesg)
 
     def __enter__(self):
         return self
