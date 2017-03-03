@@ -23,6 +23,10 @@ env:
   - CASSANDRA_DRIVER_VERSION=3.5.0
   - CASSANDRA_DRIVER_VERSION=3.6.0
   - CASSANDRA_DRIVER_VERSION=3.7.1
+matrix:
+  exclude:
+  - python: "pypy3"
+    env: CASSANDRA_DRIVER_VERSION=2.6.0
 install:
   - pip install -q cassandra-driver==$CASSANDRA_DRIVER_VERSION
   - pip install -q flask
